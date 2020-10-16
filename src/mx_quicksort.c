@@ -22,7 +22,7 @@ static int partition (char **arr, int l, int r, int *count) {
 
     while (l < r) {
         for (;mx_strlen(arr[l]) < mx_strlen(arr[p]) && l < p; l++);
-        for (;mx_strlen(arr[r]) >= mx_strlen(arr[p]) && r > p; r--);
+        for (;mx_strlen(arr[r]) > mx_strlen(arr[p]) && r > p; r--);
         if (l < r && mx_strlen(arr[l]) > mx_strlen(arr[r])) {
             p = l * (p == r) + r * (p == l) + p * (p != l && p != r);
             mx_swap_str(&arr[l], &arr[r]);
